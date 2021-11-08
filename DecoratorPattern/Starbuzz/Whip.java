@@ -1,17 +1,17 @@
 public class Whip extends CondimentDecorator {
 
-    public Whip(Beverage bev) {
-        setBeverage(bev);
+    public Whip(Beverage beverage) {
+        this.beverage = beverage;
     }
 
     @Override
     public String getDescription() {
-        return String.format("%s with Whip: %.2f", getBeverage().getDescription(), cost());
+        return beverage.getDescription() + ", Whip";
     }
 
     @Override
-    public float cost() {
-        return 0.10f + getBeverage().cost();
+    public double cost() {
+        return beverage.cost() + 0.10;
     }
 
 }

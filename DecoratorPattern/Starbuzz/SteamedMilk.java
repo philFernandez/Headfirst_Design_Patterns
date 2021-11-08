@@ -1,17 +1,17 @@
 public class SteamedMilk extends CondimentDecorator {
 
-    public SteamedMilk(Beverage bev) {
-        setBeverage(bev);
+    public SteamedMilk(Beverage beverage) {
+        this.beverage = beverage;
     }
 
     @Override
     public String getDescription() {
-        return String.format("%s with Milk: %.2f", getBeverage().getDescription(), cost());
+        return beverage.getDescription() + ", Steamed Milk";
     }
 
     @Override
-    public float cost() {
-        return 0.10f + getBeverage().cost();
+    public double cost() {
+        return beverage.cost() + 0.10;
     }
 
 }

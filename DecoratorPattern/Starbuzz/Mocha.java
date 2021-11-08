@@ -1,17 +1,16 @@
 public class Mocha extends CondimentDecorator {
 
-    public Mocha(Beverage bev) {
-        setBeverage(bev);
+    public Mocha(Beverage beverage) {
+        this.beverage = beverage;
     }
 
     @Override
     public String getDescription() {
-        return String.format("%s with Mocha: %.2f", getBeverage().getDescription(), cost());
+        return beverage.getDescription() + ", Mocha";
     }
 
     @Override
-    public float cost() {
-        return 0.20f + getBeverage().cost();
+    public double cost() {
+        return beverage.cost() + 0.20;
     }
-
 }

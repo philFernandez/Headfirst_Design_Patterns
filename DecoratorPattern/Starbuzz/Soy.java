@@ -1,17 +1,17 @@
 public class Soy extends CondimentDecorator {
 
-    public Soy(Beverage bev) {
-        setBeverage(bev);
+    public Soy(Beverage beverage) {
+        this.beverage = beverage;
     }
 
     @Override
     public String getDescription() {
-        return String.format("%s with Soy: %.2f", getBeverage().getDescription(), cost());
+        return beverage.getDescription() + ", Soy";
     }
 
     @Override
-    public float cost() {
-        return 0.15f + getBeverage().cost();
+    public double cost() {
+        return beverage.cost() + 0.15;
     }
 
 }
