@@ -1,16 +1,16 @@
 public class DarkRoast extends Beverage {
 
     public DarkRoast() {
+        setDescription("Dark Roast");
     }
 
-    public DarkRoast(String descr) {
-        setDescription(descr);
+    public DarkRoast(String desc) {
+        setDescription("Dark Roast " + desc);
     }
 
     @Override
     public float cost() {
-        // Dark Roast cost 4.99
-        return 4.99F;
+        return 0.99F;
     }
 
     @Override

@@ -1,6 +1,6 @@
-public class Milk extends CondimentDecorator {
+public class SteamedMilk extends CondimentDecorator {
 
-    public Milk(Beverage bev) {
+    public SteamedMilk(Beverage bev) {
         setBeverage(bev);
     }
 
@@ -11,7 +11,7 @@ public class Milk extends CondimentDecorator {
 
     @Override
     public float cost() {
-        return 1.29f + getBeverage().cost();
+        return 0.10f + getBeverage().cost();
     }
 
 }
