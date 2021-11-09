@@ -6,5 +6,11 @@ public class Starbuzz {
         doubleMochaSoyLatteWithWhip = new Mocha(doubleMochaSoyLatteWithWhip);
         doubleMochaSoyLatteWithWhip = new Whip(doubleMochaSoyLatteWithWhip);
         System.out.println(doubleMochaSoyLatteWithWhip.getDescription() + ": $" + doubleMochaSoyLatteWithWhip.cost());
+
+        Beverage darkRoastDoubleMochaWhip = new DarkRoast();
+        darkRoastDoubleMochaWhip = new Mocha(darkRoastDoubleMochaWhip);
+        darkRoastDoubleMochaWhip = new Mocha(darkRoastDoubleMochaWhip);
+        darkRoastDoubleMochaWhip = new Whip(darkRoastDoubleMochaWhip);
+        System.out.println(darkRoastDoubleMochaWhip.getDescription() + ": $" + darkRoastDoubleMochaWhip.cost());
     }
 }
