@@ -1,6 +1,8 @@
 public abstract class PizzaStore {
 
-    public Pizza orderPizza(String type) {
+    // Made final so all PizzaStore subclasses will be forced to use this
+    // implementation and not override.
+    final public Pizza orderPizza(String type) {
         Pizza pizza;
 
         pizza = createPizza(type);
