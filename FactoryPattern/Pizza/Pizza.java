@@ -1,9 +1,9 @@
-public interface Pizza {
-    void prepare();
+public abstract class Pizza {
+    public abstract void prepare();
 
-    void bake();
+    public abstract void bake();
 
-    void cut();
+    public abstract void cut();
 
-    void box();
+    public abstract void box();
 }
