@@ -2,7 +2,7 @@ public abstract class PizzaStore {
 
     // Made final so all PizzaStore subclasses will be forced to use this
     // implementation and not override.
-    final public Pizza orderPizza(String type) {
+    final public Pizza orderPizza(Pizza.PizzaType type) {
         Pizza pizza;
 
         pizza = createPizza(type);
@@ -15,5 +15,5 @@ public abstract class PizzaStore {
         return pizza;
     }
 
-    protected abstract Pizza createPizza(String type);
+    protected abstract Pizza createPizza(Pizza.PizzaType type);
 }

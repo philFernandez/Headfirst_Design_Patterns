@@ -1,12 +1,13 @@
+
 public class NYPizzaStore extends PizzaStore {
 
     @Override
-    public Pizza createPizza(String type) {
-        if (type.equals("cheese")) {
+    public Pizza createPizza(Pizza.PizzaType type) {
+        if (type == Pizza.PizzaType.CHEESE) {
             return new NYStyleCheesePizza();
-        } else if (type.equals("veggie")) {
+        } else if (type == Pizza.PizzaType.VEGGIE) {
             return new NYStyleVeggiePizza();
-        } else if (type.equals("clam")) {
+        } else if (type == Pizza.PizzaType.CLAM) {
             return new NYStyleClamPizza();
         }
 

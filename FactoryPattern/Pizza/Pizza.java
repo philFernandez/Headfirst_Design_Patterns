@@ -7,6 +7,10 @@ public abstract class Pizza {
     String sauce;
     List<String> toppings = new ArrayList<>();
 
+    public enum PizzaType {
+        CHEESE, PEPPERONI, CLAM, VEGGIE
+    }
+
     void prepare() {
         System.out.println("Preparing " + name);
         System.out.println("Tossing dough...");
