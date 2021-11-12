@@ -2,8 +2,8 @@ public enum ChocolateEnumBoiler {
 
     INSTANCE;
 
-    private boolean empty;
-    private boolean boiled;
+    private boolean empty = true;
+    private boolean boiled = false;
 
     public void fill() {
         if (isEmpty()) {
