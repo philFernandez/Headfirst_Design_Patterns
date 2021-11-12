@@ -9,10 +9,14 @@ public class ClamPizza extends Pizza {
     @Override
     public void prepare() {
         System.out.println("Preparing " + name);
-        ingredientFactory.createDough();
-        ingredientFactory.createSauce();
-        ingredientFactory.createCheese();
-        ingredientFactory.createClams();
+        Dough dough = ingredientFactory.createDough();
+        System.out.println(dough);
+        Sauce sauce = ingredientFactory.createSauce();
+        System.out.println(sauce);
+        Cheese cheese = ingredientFactory.createCheese();
+        System.out.println(cheese);
+        Clams clams = ingredientFactory.createClams();
+        System.out.println(clams);
     }
 
 }
