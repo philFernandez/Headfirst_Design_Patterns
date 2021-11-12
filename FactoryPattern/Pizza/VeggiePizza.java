@@ -1,27 +1,18 @@
 public class VeggiePizza extends Pizza {
 
+    PizzaIngredientFactory ingredientFactory;
+
+    public VeggiePizza(PizzaIngredientFactory ingredientFactory) {
+        this.ingredientFactory = ingredientFactory;
+    }
+
     @Override
     public void prepare() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void bake() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void cut() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void box() {
-        // TODO Auto-generated method stub
-
+        System.out.println("Preparing " + name);
+        ingredientFactory.createDough();
+        ingredientFactory.createCheese();
+        ingredientFactory.createSauce();
+        ingredientFactory.createVeggies();
     }
 
 }

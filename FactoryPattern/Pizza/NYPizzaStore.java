@@ -2,16 +2,23 @@
 public class NYPizzaStore extends PizzaStore {
 
     @Override
-    public Pizza createPizza(Pizza.PizzaType type) {
+    protected Pizza createPizza(Pizza.PizzaType type) {
+        Pizza pizza = null;
+        PizzaIngredientFactory ingredientFactory = new NYPizzaIngredientFactory();
         if (type == Pizza.PizzaType.CHEESE) {
-            return new NYStyleCheesePizza();
+            pizza = new CheesePizza(ingredientFactory);
+            pizza.setName("New York Style Cheese Pizza");
         } else if (type == Pizza.PizzaType.VEGGIE) {
-            return new NYStyleVeggiePizza();
+            pizza = new VeggiePizza(ingredientFactory);
+            pizza.setName("New York Style Veggie Pizza");
         } else if (type == Pizza.PizzaType.CLAM) {
-            return new NYStyleClamPizza();
+            pizza = new ClamPizza(ingredientFactory);
+            pizza.setName("New York Style Clam Pizza");
+        } else if (type == Pizza.PizzaType.PEPPERONI) {
+            pizza = new PepperoniPizza(ingredientFactory);
+            pizza.setName("New York Style Pepperoni Pizza");
         }
-
-        return null;
+        return pizza;
     }
 
 }

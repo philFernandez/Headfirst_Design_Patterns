@@ -1,26 +1,17 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class Pizza {
     String name;
-    String dough;
-    String sauce;
-    List<String> toppings = new ArrayList<>();
+    Dough dough;
+    Sauce sauce;
+    Veggies veggies[];
+    Cheese cheese;
+    Pepperoni pepperoni;
+    Clams clams;
 
     public enum PizzaType {
-        CHEESE, PEPPERONI, CLAM, VEGGIE
+        CHEESE, PEPPERONI, VEGGIE, CLAM
     }
 
-    void prepare() {
-        System.out.println("Preparing " + name);
-        System.out.println("Tossing dough...");
-        System.out.println("Adding Sauce...");
-        System.out.println("Adding Toppings:");
-
-        for (String topping : toppings) {
-            System.out.println("   " + topping);
-        }
-    }
+    abstract void prepare();
 
     void bake() {
         System.out.println("Bake for 25 minutes at 350");
@@ -36,5 +27,9 @@ public abstract class Pizza {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
