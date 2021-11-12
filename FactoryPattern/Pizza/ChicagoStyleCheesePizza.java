@@ -1,27 +1,13 @@
 public class ChicagoStyleCheesePizza extends Pizza {
+    public ChicagoStyleCheesePizza() {
+        name = "Chicago Style Deep Dish Cheese Pizza";
+        dough = "Extra Thick Crust Dough";
+        sauce = "Plum Tomato Sauce";
 
-    @Override
-    public void prepare() {
-        // TODO Auto-generated method stub
-
+        toppings.add("Shredded Mozzarella Cheese");
     }
 
-    @Override
-    public void bake() {
-        // TODO Auto-generated method stub
-
+    void cut() {
+        System.out.println("Cutting the pizza into square slices.");
     }
-
-    @Override
-    public void cut() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void box() {
-        // TODO Auto-generated method stub
-
-    }
-
 }
