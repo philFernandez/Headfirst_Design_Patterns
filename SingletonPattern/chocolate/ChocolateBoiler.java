@@ -2,7 +2,7 @@
 public class ChocolateBoiler {
     private boolean empty;
     private boolean boiled;
-    private static ChocolateBoiler instance = null;
+    private volatile static ChocolateBoiler instance = null;
 
     private ChocolateBoiler() {
         empty = true;
