@@ -1,24 +1,9 @@
+public enum ChocolateEnumBoiler {
 
-public class ChocolateBoiler {
+    INSTANCE;
+
     private boolean empty;
     private boolean boiled;
-    private static ChocolateBoiler instance = null;
-
-    private ChocolateBoiler() {
-        empty = true;
-        boiled = false;
-    }
-
-    public static ChocolateBoiler getInstance() {
-        if (instance == null) {
-            synchronized (ChocoFactory.class) {
-                if (instance == null) {
-                    instance = new ChocolateBoiler();
-                }
-            }
-        }
-        return instance;
-    }
 
     public void fill() {
         if (isEmpty()) {
@@ -46,4 +31,5 @@ public class ChocolateBoiler {
     public boolean isBoiled() {
         return boiled;
     }
+
 }
