@@ -6,10 +6,10 @@ public class CeilingFan {
     }
 
     public void on() {
-        System.out.println("Ceiling fan on");
+        System.out.println(location + " ceiling fan on");
     }
 
     public void off() {
-        System.out.println("Ceiling fan off");
+        System.out.println(location + " ceiling fan off");
     }
 }
