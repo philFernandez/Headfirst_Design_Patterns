@@ -3,7 +3,6 @@ import java.util.Stack;
 public class RemoteControl {
     Command[] onCommands;
     Command[] offCommands;
-    // Command undoCommand;
     Stack<Command> commandHistory;
 
     public RemoteControl() {
@@ -16,7 +15,6 @@ public class RemoteControl {
             offCommands[i] = noCommand;
         }
 
-        // undoCommand = noCommand;
         commandHistory = new Stack<Command>();
 
     }
@@ -28,13 +26,11 @@ public class RemoteControl {
 
     public void onButtonWasPushed(int slot) {
         onCommands[slot].execute();
-        // undoCommand = onCommands[slot];
         commandHistory.push(onCommands[slot]);
     }
 
     public void offButtonWasPushed(int slot) {
         offCommands[slot].execute();
-        // undoCommand = offCommands[slot];
         commandHistory.push(offCommands[slot]);
     }
 
