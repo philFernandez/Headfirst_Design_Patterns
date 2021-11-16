@@ -25,16 +25,26 @@ public class RemoteLoader {
         MacroCommand partyOffMacro = new MacroCommand(partyOff);
 
         remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
+        remoteControl.setCommand(1, lightOn, lightOff);
+        remoteControl.setCommand(2, ceilingFanHigh, ceilingFanOff);
+        remoteControl.setCommand(3, stereoOn, stereoOff);
+        remoteControl.setCommand(4, garageUp, garageDown);
+
+        remoteControl.onButtonWasPushed(1);
+        System.out.println();
+        remoteControl.onButtonWasPushed(2);
+        System.out.println();
+        remoteControl.onButtonWasPushed(3);
+        System.out.println();
+        remoteControl.onButtonWasPushed(4);
+        System.out.println();
         System.out.println(remoteControl);
 
-        remoteControl.onButtonWasPushed(0);
+        remoteControl.undoButtonWasPushed();
+        remoteControl.undoButtonWasPushed();
+        remoteControl.offButtonWasPushed(1);
         System.out.println(remoteControl);
         remoteControl.undoButtonWasPushed();
-        System.out.println(remoteControl);
-        remoteControl.onButtonWasPushed(0);
-        System.out.println(remoteControl);
-        remoteControl.offButtonWasPushed(0);
-        System.out.println(remoteControl);
 
     }
 }

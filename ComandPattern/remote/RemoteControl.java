@@ -1,7 +1,10 @@
+import java.util.Stack;
+
 public class RemoteControl {
     Command[] onCommands;
     Command[] offCommands;
-    Command undoCommand;
+    // Command undoCommand;
+    Stack<Command> commandHistory;
 
     public RemoteControl() {
         onCommands = new Command[7];
@@ -13,7 +16,9 @@ public class RemoteControl {
             offCommands[i] = noCommand;
         }
 
-        undoCommand = noCommand;
+        // undoCommand = noCommand;
+        commandHistory = new Stack<Command>();
+
     }
 
     public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -23,15 +28,18 @@ public class RemoteControl {
 
     public void onButtonWasPushed(int slot) {
         onCommands[slot].execute();
-        undoCommand = onCommands[slot];
+        // undoCommand = onCommands[slot];
+        commandHistory.push(onCommands[slot]);
     }
 
     public void offButtonWasPushed(int slot) {
         offCommands[slot].execute();
-        undoCommand = offCommands[slot];
+        // undoCommand = offCommands[slot];
+        commandHistory.push(offCommands[slot]);
     }
 
     public void undoButtonWasPushed() {
+        Command undoCommand = commandHistory.pop();
         undoCommand.undo();
     }
 
@@ -41,10 +49,9 @@ public class RemoteControl {
         stringBuff.append("\n------ Remote Control ------\n");
 
         for (var i = 0; i < onCommands.length; i++) {
-            stringBuff.append("[slot " + i + "] " + onCommands[i].getClass().getName() + "      "
-                    + offCommands[i].getClass().getName() + "\n");
+            stringBuff.append("[slot " + i + "] " + onCommands[i] + "      " + offCommands[i] + "\n");
         }
-        stringBuff.append("[undo] " + undoCommand.getClass().getName() + "\n");
+        stringBuff.append("[undo] " + commandHistory + "\n");
 
         return stringBuff.toString();
     }

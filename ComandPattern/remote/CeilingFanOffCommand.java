@@ -30,4 +30,9 @@ public class CeilingFanOffCommand implements Command {
         }
     }
 
+    @Override
+    public String toString() {
+        return "CeilingFanOffCommand";
+    }
+
 }

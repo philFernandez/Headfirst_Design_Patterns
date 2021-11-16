@@ -21,4 +21,9 @@ public class MacroCommand implements Command {
         }
     }
 
+    @Override
+    public String toString() {
+        return "MacroCommand";
+    }
+
 }

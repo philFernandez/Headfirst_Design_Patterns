@@ -17,4 +17,9 @@ public class StereoOnWithCDCommand implements Command {
     public void undo() {
         stereo.off();
     }
+
+    @Override
+    public String toString() {
+        return "StereoOnWithCDCommand";
+    }
 }

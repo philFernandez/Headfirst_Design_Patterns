@@ -16,4 +16,9 @@ public class StereoOffCommand implements Command {
         stereo.on();
     }
 
+    @Override
+    public String toString() {
+        return "StereoOffCommand";
+    }
+
 }
