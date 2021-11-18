@@ -26,4 +26,20 @@ public class HomeTheaterFacade {
                 + ", projector=" + projector + ", screen=" + screen + ", tuner=" + tuner + "]";
     }
 
+    public void watchMovie(String movie) {
+        System.out.println("Preparing Movie...");
+        popper.on();
+        popper.pop();
+        lights.dim(10);
+        screen.down();
+        projector.on();
+        projector.wideScreenMode();
+        amp.on();
+        amp.setStreamingPlayer(player);
+        amp.setStereoSound();
+        amp.setVolume(5);
+        player.on();
+        player.play(movie);
+    }
+
 }

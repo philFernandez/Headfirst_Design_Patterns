@@ -10,7 +10,8 @@ public class Amplifier {
         System.out.println("Amplifier off");
     }
 
-    public void setStreamingPlayer() {
+    public void setStreamingPlayer(StreamingPlayer player) {
+        this.player = player;
         System.out.println("Streaming Player is set in Amplifier");
     }
 
@@ -22,15 +23,16 @@ public class Amplifier {
         System.out.println("Surround Sound is set in Amplifier");
     }
 
-    public void setTuner() {
+    public void setTuner(Tuner tuner) {
+        this.tuner = tuner;
         System.out.println("Tuner is set in Amplifier");
     }
 
-    public void setVolume() {
-        System.out.println("Volume is set in Amplifier");
+    public void setVolume(int volume) {
+        System.out.println("Volume is set in Amplifier. Level: " + volume);
     }
 
     public String toString() {
-        return "Amplifier[ tuner: " + this.tuner + " ]";
+        return "Amplifier[ tuner: " + this.tuner + ", " + this.player + " ]";
     }
 }

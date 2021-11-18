@@ -8,8 +8,8 @@ public class TheaterLights {
         System.out.println("Theater Lights are off");
     }
 
-    public void dim() {
-        System.out.println("Theater Lights are dimming");
+    public void dim(int brightness) {
+        System.out.println("Theater Lights are dimming. Level: " + brightness);
     }
 
     public String toString() {

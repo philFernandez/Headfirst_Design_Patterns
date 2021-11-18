@@ -13,8 +13,8 @@ public class StreamingPlayer {
         System.out.println("Streaming player is paused");
     }
 
-    public void play() {
-        System.out.println("Streaming player is playing");
+    public void play(String media) {
+        System.out.println("Streaming player is playing \"" + media + "\"");
     }
 
     public void stop() {
