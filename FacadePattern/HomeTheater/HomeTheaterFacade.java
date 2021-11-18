@@ -27,7 +27,7 @@ public class HomeTheaterFacade {
     }
 
     public void watchMovie(String movie) {
-        System.out.println("Preparing Movie...");
+        System.out.println("Movie Theater Activating...");
         popper.on();
         popper.pop();
         lights.dim(10);
@@ -40,6 +40,17 @@ public class HomeTheaterFacade {
         amp.setVolume(5);
         player.on();
         player.play(movie);
+    }
+
+    public void endMovie() {
+        System.out.println("Movie Theater Shutting Down...");
+        popper.off();
+        lights.on();
+        screen.up();
+        projector.off();
+        amp.off();
+        player.stop();
+        player.off();
     }
 
 }
