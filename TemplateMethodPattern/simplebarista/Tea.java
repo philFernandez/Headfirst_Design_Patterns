@@ -22,28 +22,16 @@ public class Tea extends CaffeineBeverage {
 
     private String getUserInput() {
         ConsoleReader in = ConsoleReader.INSTANCE;
-        System.out.print("Lemon? (y/n): ");
-        String answer = in.nextLine();
-        in.close();
+        String answer = null;
+        try {
+            System.out.print("Lemon? (y/n): ");
+            answer = in.nextLine();
+        } catch (ConsoleReaderClosedException e) {
+            System.err.println(e);
+        }
+        if (answer == null) {
+            return "no";
+        }
         return answer;
     }
-
-    // private String getUserInput() {
-    // String answer = null;
-    // System.out.print("Lemon? (y/n): ");
-
-    // try (BufferedReader in = new BufferedReader(new
-    // InputStreamReader(System.in))) {
-    // answer = in.readLine();
-    // } catch (IOException e) {
-    // System.err.println(e);
-    // }
-
-    // if (answer == null) {
-    // return "no";
-    // }
-
-    // return answer;
-    // }
-
 }

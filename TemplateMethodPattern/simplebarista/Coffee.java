@@ -22,8 +22,16 @@ public class Coffee extends CaffeineBeverage {
 
     private String getUserInput() {
         ConsoleReader in = ConsoleReader.INSTANCE;
-        System.out.print("Milk and Sugar? (y/n): ");
-        String answer = in.nextLine();
+        String answer = null;
+        try {
+            System.out.print("Milk and Sugar? (y/n): ");
+            answer = in.nextLine();
+        } catch (ConsoleReaderClosedException e) {
+            System.err.println(e);
+        }
+        if (answer == null) {
+            return "no";
+        }
         return answer;
     }
 
