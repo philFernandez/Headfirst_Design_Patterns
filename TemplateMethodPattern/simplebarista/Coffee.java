@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Coffee extends CaffeineBeverage {
 
@@ -13,7 +12,7 @@ public class Coffee extends CaffeineBeverage {
     }
 
     @Override
-    boolean wantsCondiments() {
+    public boolean wantsCondiments() {
         String answer = getUserInput();
         if (answer.toLowerCase().startsWith("y")) {
             return true;
@@ -22,10 +21,9 @@ public class Coffee extends CaffeineBeverage {
     }
 
     private String getUserInput() {
-        Scanner in = new Scanner(System.in);
+        ConsoleReader in = ConsoleReader.INSTANCE;
         System.out.print("Milk and Sugar? (y/n): ");
         String answer = in.nextLine();
-        in.close();
         return answer;
     }
 
