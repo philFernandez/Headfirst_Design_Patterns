@@ -1,23 +1,18 @@
+
 public class JavaEnabledWaitress {
     public void printMenu() {
         var pancakeHouseMenu = new PancakeHouseMenu();
         var<MenuItem> breakfastItems = pancakeHouseMenu.getMenuItems();
 
         var dinerMenu = new DinerMenu();
-        MenuItem[] lunchItems = dinerMenu.getMenuItems();
+        var dinerMenuIterator = dinerMenu.createIterator();
 
-        for (var i = 0; i < breakfastItems.size(); i++) {
-            var menuItem = breakfastItems.get(i);
-            System.out.println(menuItem.getName() + " ");
-            System.out.println(menuItem.getPrice() + " ");
-            System.out.println(menuItem.getDescription());
+        while (dinerMenuIterator.hasNext()) {
+            MenuItem item = dinerMenuIterator.next();
+            System.out.print(item.getName() + ". ");
+            System.out.print(item.getPrice() + ". ");
+            System.out.println(item.getDescription());
         }
 
-        for (var i = 0; i < lunchItems.length; i++) {
-            var menuItem = lunchItems[i];
-            System.out.println(menuItem.getName() + " ");
-            System.out.println(menuItem.getPrice() + " ");
-            System.out.println(menuItem.getDescription());
-        }
     }
 }
