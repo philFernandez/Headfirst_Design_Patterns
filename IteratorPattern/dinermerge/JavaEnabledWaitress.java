@@ -1,3 +1,4 @@
+import java.util.Iterator;
 
 public class JavaEnabledWaitress {
 
@@ -16,7 +17,7 @@ public class JavaEnabledWaitress {
         printMenu(dinerMenu.createIterator());
     }
 
-    private void printMenu(Iterator it) {
+    private void printMenu(Iterator<MenuItem> it) {
         while (it.hasNext()) {
             var item = it.next();
             System.out.print(item.getName() + ". ");
