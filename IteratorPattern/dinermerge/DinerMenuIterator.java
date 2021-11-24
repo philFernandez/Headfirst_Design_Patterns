@@ -24,4 +24,9 @@ public class DinerMenuIterator implements Iterator<MenuItem> {
         return item;
     }
 
+    @Override
+    public void remove() {
+        throw new UnsupportedOperationException("Menu items cannot be removed.");
+    }
+
 }
