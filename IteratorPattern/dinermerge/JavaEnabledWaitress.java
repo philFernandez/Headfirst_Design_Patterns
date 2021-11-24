@@ -16,7 +16,7 @@ public class JavaEnabledWaitress {
         printMenu(dinerMenu.createIterator());
     }
 
-    public void printMenu(Iterator it) {
+    private void printMenu(Iterator it) {
         while (it.hasNext()) {
             var item = it.next();
             System.out.print(item.getName() + ". ");
