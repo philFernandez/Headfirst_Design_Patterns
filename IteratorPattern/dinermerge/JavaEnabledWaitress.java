@@ -1,24 +1,27 @@
 
 public class JavaEnabledWaitress {
+
+    PancakeHouseMenu pancakeHouseMenu;
+    DinerMenu dinerMenu;
+
+    public JavaEnabledWaitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu) {
+        this.pancakeHouseMenu = pancakeHouseMenu;
+        this.dinerMenu = dinerMenu;
+    }
+
     public void printMenu() {
-        var pancakeHouseMenu = new PancakeHouseMenu();
-        var pancakeHouseMenuIterator = pancakeHouseMenu.createIterator();
+        System.out.println("MENU\n---\nBREAKFAST");
+        printMenu(pancakeHouseMenu.createIterator());
+        System.out.println("\nLUNCH");
+        printMenu(dinerMenu.createIterator());
+    }
 
-        var dinerMenu = new DinerMenu();
-        var dinerMenuIterator = dinerMenu.createIterator();
-
-        while (dinerMenuIterator.hasNext()) {
-            MenuItem item = dinerMenuIterator.next();
+    public void printMenu(Iterator it) {
+        while (it.hasNext()) {
+            var item = it.next();
             System.out.print(item.getName() + ". ");
             System.out.print(item.getPrice() + ". ");
             System.out.println(item.getDescription());
         }
-        while (pancakeHouseMenuIterator.hasNext()) {
-            MenuItem item = pancakeHouseMenuIterator.next();
-            System.out.print(item.getName() + ". ");
-            System.out.print(item.getPrice() + ". ");
-            System.out.println(item.getDescription());
-        }
-
     }
 }

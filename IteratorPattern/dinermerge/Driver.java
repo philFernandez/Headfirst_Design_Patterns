@@ -1,7 +1,7 @@
 
 public class Driver {
     public static void main(String[] args) {
-        JavaEnabledWaitress waitress = new JavaEnabledWaitress();
+        var waitress = new JavaEnabledWaitress(new PancakeHouseMenu(), new DinerMenu());
         waitress.printMenu();
     }
 }
