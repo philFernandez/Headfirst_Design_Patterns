@@ -2,10 +2,10 @@ import java.util.Iterator;
 
 public class JavaEnabledWaitress {
 
-    PancakeHouseMenu pancakeHouseMenu;
-    DinerMenu dinerMenu;
+    Menu pancakeHouseMenu;
+    Menu dinerMenu;
 
-    public JavaEnabledWaitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu) {
+    public JavaEnabledWaitress(Menu pancakeHouseMenu, Menu dinerMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinerMenu = dinerMenu;
     }
