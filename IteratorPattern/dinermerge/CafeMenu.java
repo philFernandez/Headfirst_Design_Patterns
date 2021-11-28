@@ -1,7 +1,8 @@
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
-public class CafeMenu {
+public class CafeMenu implements Menu {
     Map<String, MenuItem> menuItems = new HashMap<>();
 
     public CafeMenu() {
@@ -15,8 +16,9 @@ public class CafeMenu {
         menuItems.put(name, menuItem);
     }
 
-    public Map<String, MenuItem> getMenuItems() {
-        return menuItems;
+    @Override
+    public Iterator<MenuItem> createIterator() {
+        return menuItems.values().iterator();
     }
 }
 
