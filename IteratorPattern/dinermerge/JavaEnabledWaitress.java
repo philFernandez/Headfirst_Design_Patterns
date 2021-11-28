@@ -1,24 +1,20 @@
 import java.util.Iterator;
+import java.util.List;
 
 public class JavaEnabledWaitress {
+
+    List<Menu> menus;
 
     Menu pancakeHouseMenu;
     Menu dinerMenu;
     Menu cafeMenu;
 
-    public JavaEnabledWaitress(Menu pancakeHouseMenu, Menu dinerMenu, Menu cafeMenu) {
-        this.pancakeHouseMenu = pancakeHouseMenu;
-        this.dinerMenu = dinerMenu;
-        this.cafeMenu = cafeMenu;
+    public JavaEnabledWaitress(List<Menu> menus) {
+        this.menus = menus;
     }
 
     public void printMenu() {
-        System.out.println("MENU\n---\nBREAKFAST");
-        printMenu(pancakeHouseMenu.createIterator());
-        System.out.println("\nLUNCH");
-        printMenu(dinerMenu.createIterator());
-        System.out.println("\nDINNER");
-        printMenu(cafeMenu.createIterator());
+        menus.forEach(menu -> printMenu(menu.createIterator()));
     }
 
     private void printMenu(Iterator<MenuItem> it) {
